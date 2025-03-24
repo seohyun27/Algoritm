@@ -12,7 +12,7 @@ public class MergeTD extends AbstractSort {
         int i = lo, j = mid+1; //lo는 0~mid, j는 (mid+1)~hi 만큼만 움직임
         for(int k = lo; k<= hi; k++){ //aux[]를 한 바퀴 돈다
             if(i>mid)                        a[k] = aux[j++]; //오른쪽 배열의 원소만 남음
-            else if(j>hi) a[k] =             aux[i++]; //왼쪽 배열의 원소만 남음
+            else if(j>hi)                    a[k] = aux[i++]; //왼쪽 배열의 원소만 남음
             else if(less(aux[j], aux[i]))    a[k] = aux[j++];
             else                             a[k] = aux[i++]; //aux[i] 작을 때 or 둘 다 같을 때
         }
