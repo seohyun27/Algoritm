@@ -2,9 +2,9 @@
 This repository contains an algorithmic code written in Java for the a third-year, first semester. The code is organized by topic in each file.
 
 
-### Contents
+## Contents
 
-#### Sorting
+### Sorting
 - insertion sort
 - selection sort
 - counting sort
@@ -14,11 +14,11 @@ This repository contains an algorithmic code written in Java for the a third-yea
 - bottom-up merge sort
 - Tim sort
 
-#### Search Structures
+### Search Structures
 - Sequential Search Symbol Table
 - Binary Search Symbol Table
 
-### Additional Comments
+## Additional Comments
 This project was created for studying algorithms and may contain errors.
 
 
