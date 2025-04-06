@@ -16,18 +16,6 @@ abstract class AbstractSort {
         a[i] = a[j];
         a[j] = t;
     }
-
-    protected static void show(double[] a) {
-        for(int i=0;i<a.length;i++)
-            System.out.print(a[i]+" ");
-        System.out.println();
-    }
-
-    protected static boolean isSorted(double[] a){
-        for(int i=1;i<a.length;i++)
-            if(less(a[i], a[i-1])) return false;
-        return true;
-    }
 }
 
 class MergeBU extends AbstractSort {
@@ -65,6 +53,20 @@ class MergeBU extends AbstractSort {
     }
 }
 
+class Selection extends AbstractSort { //선택 정렬! 필요 없어지면 삭제할 것!!
+    public static void sort(double[] d, double[] x, double[] y, int k) {
+        int n = d.length;
+        for (int i = 0; i < k; i++) {
+            int min = i;
+            for (int j = i + 1; j < n; j++) {
+                if (less(d[j], d[min])) min = j;
+            }
+            exch(d, i, min);
+            exch(x, i, min);
+            exch(y, i, min);
+        }
+    }
+}
 
 public class HW1 extends AbstractSort {
     private static int SIZE = 1000;
@@ -91,6 +93,7 @@ public class HW1 extends AbstractSort {
         distance[N] = d;
         N++;
 
+        //if(N==SIZE){ SIZE *= 2; resize(SIZE);}
         if(N==SIZE){ SIZE *= 2; resize(SIZE);}
     }
 
@@ -112,6 +115,37 @@ public class HW1 extends AbstractSort {
     public void kNearest(int k) {
         if (k == -1) k = N;
 
+        /*
+        double[] distanceCopy = new double[N];
+        double[] xCopy = new double[N];
+        double[] yCopy = new double[N];
+        double[] tmpCopy = new double[N];
+
+        System.arraycopy(distance, 0, distanceCopy, 0, N);
+        System.arraycopy(x, 0, xCopy, 0, N);
+        System.arraycopy(y, 0, yCopy, 0, N);
+
+        x = xCopy;
+        y = yCopy;
+        distance = distanceCopy;
+         */
+
+        resize(N);
+
+        long start = System.currentTimeMillis();
+        MergeBU.sort(distance, x, y);
+        long end = System.currentTimeMillis();
+        System.out.printf("k = %d일 때의 실행 시간 = %dms\n", k, (end-start));
+
+        for(int i = 0; i < k; i++) {
+            System.out.printf("%d: (%f, %f)  거리 = %f\n", i, x[i], y[i], distance[i]);
+        }
+    }
+
+    public void improved_kNearest(int k) {
+        if (k == -1) k = N;
+        long start, end;
+
         double[] distanceCopy = new double[N];
         double[] xCopy = new double[N];
         double[] yCopy = new double[N];
@@ -125,20 +159,29 @@ public class HW1 extends AbstractSort {
         y = yCopy;
         distance = distanceCopy;
 
-        long start = System.currentTimeMillis();
-        MergeBU.sort(distanceCopy, xCopy, yCopy);
-        long end = System.currentTimeMillis();
-        System.out.printf("k = %d일 때의 실행 시간 = %dms\n", k, (end-start));
+        if(k < 200) {
+            start = System.currentTimeMillis();
+            Selection.sort(distance, x, y, k);
+            end = System.currentTimeMillis();
+        }
 
+        else {
+            start = System.currentTimeMillis();
+            MergeBU.sort(distance, x, y);
+            end = System.currentTimeMillis();
+        }
+
+        System.out.printf("k = %d일 때의 실행 시간 = %dms\n", k, (end-start));
         for(int i = 0; i < k; i++) {
-            System.out.printf("%d : (%f, %f), 거리: %f\n", i, x[i], y[i], distance[i]);
+            System.out.printf("%d: (%f, %f)  거리 = %f\n", i, x[i], y[i], distance[i]);
         }
     }
 
 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("입력 파일 이름? ");
+        System.out.println("파일 이름? ");
         String fname = sc.nextLine();
         sc.close();
 
@@ -159,10 +202,8 @@ public class HW1 extends AbstractSort {
                 list.add(station_x, station_y, station_d);
             }
 
-            list.kNearest(100);
-            list.kNearest(100);
-
-
+            list.kNearest(10);
+            list.improved_kNearest(10);
 
             } catch (IOException e) { System.out.println(e); return; }
         if (sc != null) sc.close();
