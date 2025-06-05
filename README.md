@@ -17,6 +17,12 @@ This repository contains an algorithmic code written in Java for the a third-yea
 ### Search Structures
 - Sequential Search Symbol Table
 - Binary Search Symbol Table
+- BST
+- Frequency Counter
+
+### String
+
+### homeworks
 
 ## Additional Comments
 This project was created for studying algorithms and may contain errors.
