@@ -2,7 +2,7 @@
 This repository contains an algorithmic code written in Java for the a third-year, first semester. The code is organized by topic in each file.
 
 
-## Contents
+## Code
 
 ### Sorting
 - insertion sort
@@ -24,7 +24,9 @@ This repository contains an algorithmic code written in Java for the a third-yea
 
 ### String
 
-### homeworks
+
+## Homework
+- Codes written for homeworks
 
 
 ## Additional Comments
