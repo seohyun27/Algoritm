@@ -4,30 +4,30 @@ This repository contains an algorithmic code written in Java for the a third-yea
 
 ## Contents
 
-- Code
+#### Code
 
-  - Sorting
-    - insertion sort
-    - selection sort
-    - counting sort
-    - radix sort
-    - shell sort
-    - top-down merge sort
-    - bottom-up merge sort
-    - Tim sort
+- Sorting
+  - insertion sort
+  - selection sort
+  - counting sort
+  - radix sort
+  - shell sort
+  - top-down merge sort
+  - bottom-up merge sort
+  - Tim sort
 
-  - Search Structures
-    - Sequential Search Symbol Table
-    - Binary Search Symbol Table
-    - BST
-    - Frequency Counter
+- Search Structures
+  - Sequential Search Symbol Table
+  - Binary Search Symbol Table
+  - BST
+  - Frequency Counter
 
-  - DP
+- DP
 
-  - String
+- String
 
-- Homework
-  - Codes written for homeworks
+#### Homework
+- Codes written for homeworks
 
 
 ## Additional Comments
