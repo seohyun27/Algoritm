@@ -2,31 +2,32 @@
 This repository contains an algorithmic code written in Java for the a third-year, first semester. The code is organized by topic in each file.
 
 
-## Code
+## Contents
 
-### Sorting
-- insertion sort
-- selection sort
-- counting sort
-- radix sort
-- shell sort
-- top-down merge sort
-- bottom-up merge sort
-- Tim sort
+- Code
 
-### Search Structures
-- Sequential Search Symbol Table
-- Binary Search Symbol Table
-- BST
-- Frequency Counter
+  - Sorting
+    - insertion sort
+    - selection sort
+    - counting sort
+    - radix sort
+    - shell sort
+    - top-down merge sort
+    - bottom-up merge sort
+    - Tim sort
 
-### DP
+  - Search Structures
+    - Sequential Search Symbol Table
+    - Binary Search Symbol Table
+    - BST
+    - Frequency Counter
 
-### String
+  - DP
 
+  - String
 
-## Homework
-- Codes written for homeworks
+- Homework
+  - Codes written for homeworks
 
 
 ## Additional Comments
