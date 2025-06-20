@@ -12,14 +12,18 @@ class Solution {
         return answer;
     }
 
-    void divide(int x, int y, int n, int[][] arr) {
-        if(Check(x, y, n, arr)){
-            if(arr[x][y] == 0) zero++;
+    //x : 행의 시작 인덱스
+    //y : 열의 시작 인덱스
+    //n : 배열의 크기
+
+    void divide(int x, int y, int n, int[][] arr) { //배열 쪼개기
+        if(Check(x, y, n, arr)){ //쪼갠 배열이 모두 같은 항이라면
+            if(arr[x][y] == 0) zero++; //배열에 든 게 0일 때
             else one++;
             return;
         }
 
-        divide(x, y, n/2, arr);
+        divide(x, y, n/2, arr); //네 구역에서 다시 divide 호출
         divide(x+n/2, y, n/2, arr);
         divide(x, y+n/2, n/2, arr);
         divide(x+n/2, y+n/2, n/2, arr);

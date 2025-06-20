@@ -20,9 +20,12 @@ This repository contains an algorithmic code written in Java for the a third-yea
 - BST
 - Frequency Counter
 
+### DP
+
 ### String
 
 ### homeworks
+
 
 ## Additional Comments
 This project was created for studying algorithms and may contain errors.
