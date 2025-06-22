@@ -1,5 +1,5 @@
 # Algoritm
-This repository contains an algorithmic code written in Java for the a third-year, first semester. The code is organized by topic in each file.
+This repository contains an algorithmic code written in Java for 3-1. The code is organized by topic in each file.
 
 
 ## Contents
