@@ -2,21 +2,22 @@ package SearchStructures;
 
 import java.util.ArrayList;
 
-class Node<K, V>{ //제네릭 타입
-    K key; //K타입 변수 key
-    V value; //V타입 변수 value
-    Node<K, V> next; //참조 변수(포인터)
-
-    public Node(K key, V value, Node<K,V> next){ //생성자
-        this.key = key;
-        this.value = value;
-        this.next = next;
-    }
-}
-
 //단방향 연결 리스트를 이용한 순차 검색 : 기본 연산들
 
 public class SequentialSearchST<K, V> {
+    private static class Node<K, V>{ //제네릭 타입
+        K key; //K타입 변수 key
+        V value; //V타입 변수 value
+        Node<K, V> next; //참조 변수(포인터)
+
+        public Node(K key, V value, Node<K,V> next){ //생성자
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+    }
+
+
     private Node<K, V> first; //첫 번째 노드를 가리키게 될 Node 타입의 참조 변수, 초기에는 null을 가리킨다
     int N; //연결리스트의 노드 수, 초기값 = 0
 
