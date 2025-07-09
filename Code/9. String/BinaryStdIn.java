@@ -1,4 +1,4 @@
-package alg.chap6.base;
+package String;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

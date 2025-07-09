@@ -1,4 +1,6 @@
-package alg.chap6.base;
+package String;
+
+// package alg.chap6.base;
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;

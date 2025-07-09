@@ -1,4 +1,4 @@
-package alg.chap6.base;
+package String;
 
 public class DirectedDFS {
 	private boolean[] marked;	// marked[v] = true if v is reachable from source 

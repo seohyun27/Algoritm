@@ -1,4 +1,4 @@
-package alg.chap6.base;
+package String;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;
